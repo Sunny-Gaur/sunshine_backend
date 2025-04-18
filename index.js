@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express =require('express');
 
 const app = express();
@@ -26,7 +27,8 @@ var addcart;
 var order;
 var userdata;
 var all;
-const connectionString="mongodb+srv://admin:admin@cluster0.ygqvhfq.mongodb.net/?retryWrites=true&w=majority";
+// const connectionString="mongodb+srv://admin:admin@cluster0.ygqvhfq.mongodb.net/?retryWrites=true&w=majority";
+const connectionString = process.env.MONGO_URI;
 
 MongoClient.connect(connectionString,function(err, succ){
     if(err) throw err;
