@@ -575,10 +575,15 @@ app.post("/go",(req,res)=>{
 
 
 
- app.listen(1000,(req,res)=>{
-    console.log("server started")
- })
+//  app.listen(1000,(req,res)=>{
+//     console.log("server started")
+//  })
 
+const PORT = process.env.PORT || 1000;
+
+app.listen(PORT, () => {
+    console.log(`Server started on port ${PORT}`);
+})
 
 
 // checking
